@@ -1,0 +1,181 @@
+body {
+    font-family: 'Jersey 10', sans-serif;
+    font-size: 1.25rem;
+}
+/* --- THEME VARIABLES --- */
+.light {
+    --bg-main: #FFFFFF;
+    --bg-secondary: #F3F4F6;
+    --bg-input: #F9FAFB;
+    --text-main: #000000;
+    --text-secondary: #374151;
+    --border-color: #D1D5DB;
+    --mood-highlight: #e5e7eb;
+    --cal-note-bg: #E5E7EB;
+    --cal-note-text: #1F2937;
+    --cal-task-bg: #D1D5DB; /* Slightly different grey */
+    --cal-task-text: #1F2937;
+    --accent-color: #000000;
+}
+.dark {
+    --bg-main: #000000;
+    --bg-secondary: #111111;
+    --bg-input: #1F1F1F;
+    --text-main: #FFFFFF;
+    --text-secondary: #A0A0A0;
+    --border-color: #2F2F2F;
+    --mood-highlight: #3F3F3F;
+    --cal-note-bg: #2F2F2F;
+    --cal-note-text: #E0E0E0;
+    --cal-task-bg: #1F1F1F;
+    --cal-task-text: #E0E0E0;
+    --accent-color: #FFFFFF;
+}
+
+/* --- GENERAL & LAYOUT --- */
+.view {
+    display: none;
+}
+.view.active-view {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* --- SIDEBAR --- */
+.sidebar-link {
+    transition: background-color 0.2s, color 0.2s;
+}
+.sidebar-link:not(.active):hover {
+    background-color: var(--bg-secondary);
+}
+.sidebar-link.active,
+.sidebar-link.active:hover {
+    background-color: var(--text-main);
+    color: var(--bg-main);
+    font-weight: bold;
+}
+
+/* --- FORM & BUTTONS --- */
+.form-input {
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    font-family: 'Jersey 10', sans-serif;
+    font-size: 1.25rem;
+}
+textarea.form-input {
+    min-height: 120px;
+}
+.form-input::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+.form-input:focus {
+    outline: 2px solid var(--text-main);
+    outline-offset: 2px;
+    --tw-ring-color: transparent;
+}
+.btn {
+    background-color: var(--text-main);
+    color: var(--bg-main);
+    border: 2px solid var(--text-main);
+    transition: all 0.2s ease-in-out;
+    padding: 0.5rem 1rem;
+}
+.btn:hover {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+}
+.btn-outline {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    border: 2px solid var(--text-main);
+    padding: 0.5rem 1rem;
+}
+.btn-outline:hover {
+    background-color: var(--text-main);
+    color: var(--bg-main);
+}
+.btn.recording {
+    animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 var(--text-main); }
+    70% { box-shadow: 0 0 0 10px rgba(0, 0, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); }
+}
+
+/* --- COMPONENTS --- */
+.mood-btn.selected {
+    background-color: var(--mood-highlight);
+    transform: scale(1.25);
+}
+.calendar-day {
+    border: 1px solid var(--border-color);
+    min-height: 120px;
+    padding: 8px;
+    transition: background-color 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+.calendar-day.other-month {
+    background-color: var(--bg-secondary);
+    opacity: 0.5;
+}
+.calendar-day.has-due-date {
+    cursor: pointer;
+}
+.cal-item {
+    font-size: 0.7rem;
+    font-family: sans-serif;
+    padding: 2px 4px;
+    border-radius: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 2px;
+}
+.cal-item-note {
+    background-color: var(--cal-note-bg);
+    color: var(--cal-note-text);
+}
+.cal-item-task {
+    background-color: var(--cal-task-bg);
+    color: var(--cal-task-text);
+}
+
+/* --- FLASHCARD STYLES --- */
+.flashcard-container {
+    perspective: 1000px;
+}
+.flashcard {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+.flashcard.is-flipped {
+    transform: rotateY(180deg);
+}
+.flashcard-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 0.5rem;
+    background-color: var(--bg-secondary);
+}
+.flashcard-back {
+    transform: rotateY(180deg);
+}
