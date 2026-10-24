@@ -1,7 +1,7 @@
-# Writedownia - Journal, Notes, Flashcards & Distraction-Free Workspace
+﻿# Writedownia - Journal, Notes, Flashcards & Distraction-Free Workspace
 
 > A minimalist, responsive browser workspace unifying reflective journaling, structured note-taking, and flashcard learning.
-> Authors: Nguyen Huynh Dang Nhut (@nhutnhd) & CodliRo
+> Authors: Nguyen Huynh Dang Nhut (@nhdnhut) & CodliRo
 > Architecture: Client-Side Single Page Application (HTML5, Tailwind CSS, Lucide Icons, JavaScript ES6)
 
 [![Frontend](https://img.shields.io/badge/Frontend-Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
@@ -42,7 +42,7 @@ writedownia/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/nhutnhd/writedownia.git
+   git clone https://github.com/nhdnhut/writedownia.git
    cd writedownia
    ```
 
@@ -53,4 +53,5 @@ writedownia/
 
 ## 4. License
 
-This project is licensed under the MIT License. Copyright (c) 2025-2026 CodliRo & Nguyen Huynh Dang Nhut (@nhutnhd).
+This project is licensed under the MIT License. Copyright (c) 2025-2026 CodliRo & Nguyen Huynh Dang Nhut (@nhdnhut).
+
