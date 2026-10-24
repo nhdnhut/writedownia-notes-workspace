@@ -1,4 +1,4 @@
-﻿# Writedownia - Journal, Notes, Flashcards & Distraction-Free Workspace
+# Writedownia - Journal, Notes, Flashcards & Distraction-Free Workspace
 
 > A minimalist, responsive browser workspace unifying reflective journaling, structured note-taking, and flashcard learning.
 > Authors: Nguyen Huynh Dang Nhut (@nhdnhut) & CodliRo
